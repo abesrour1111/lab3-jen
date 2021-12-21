@@ -30,6 +30,20 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
         sh 'cmp /tmp/ids_groupes_prim /tmp/id_groupes'
       }
     }
+    post
+    {
+      failure {
+      echo "les fichiers sont différents"
+      }
+      success
+      {
+       echo "les fichiers sont identiques 
+      }
+      always
+      {
+       echo "fin de l'exercice" 
+      }
+    }
 
   }
 }
