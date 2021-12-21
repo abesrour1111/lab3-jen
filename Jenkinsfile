@@ -27,7 +27,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
 
     stage('stage 2') {
       steps {
-        sh 'cmp /tmp/ids_groupes_prim /tmp/id_groupes'
+        sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes'
       }
     }
     post
