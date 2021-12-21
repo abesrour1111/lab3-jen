@@ -29,7 +29,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
       steps {
         sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes'
       }
-    }
+    }}
     post
     {
       failure {
@@ -45,5 +45,5 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
       }
     }
 
-  }
+  
 }
