@@ -37,7 +37,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
       }
       success
       {
-       echo "les fichiers sont identiques 
+       echo "les fichiers sont identiques "
       }
       always
       {
