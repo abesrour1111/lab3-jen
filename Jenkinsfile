@@ -27,9 +27,21 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
 
     stage('stage 2') {
       steps {
-        sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes'
+        sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes > test'
+        sh 'nombre=`wc -l test`
       }
-    }}
+    }
+
+  stage ('test')
+  {
+    when {expression { x == 0 }
+    steps {
+
+echo "les fichiers sont identiques"
+}
+
+}
+}
     post
     {
       failure {
