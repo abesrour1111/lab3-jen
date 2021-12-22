@@ -33,7 +33,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
     stage('stage 2') {
       steps {
         echo "ok"
-        def params.nombre = sh returnStdout: true, script : 'wc -l /tmp/ids_groupes_prim|cut -d" " -f1'
+        def nombre = sh returnStdout: true, script : 'wc -l /tmp/ids_groupes_prim|cut -d" " -f1'
         params.nombre2= sh 'wc -l /tmp/id_groupes | cut -d" " -f1'
       }
     }
