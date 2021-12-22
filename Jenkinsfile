@@ -28,7 +28,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
     stage('stage 2') {
       steps {
         sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes > test'
-        sh 'nombre=`wc -l test`
+        sh 'nombre=`wc -l test`'
       }
     }
 
