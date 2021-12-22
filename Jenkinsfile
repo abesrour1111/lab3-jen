@@ -32,8 +32,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
       }
     }
 
-  stage ('test')
-  {
+  stage ('test') {
     when {expression { x == 0 }
     steps {
 
