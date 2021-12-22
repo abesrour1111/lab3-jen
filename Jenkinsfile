@@ -2,8 +2,8 @@ pipeline {
   agent any
 parameters {
 
-int(name: 'nombre', value: 0)
-int(name: 'nombre2', value: 0)
+string(name: 'nombre', defaultvalue: '0')
+strng(name: 'nombre2', defaultvalue: '0')
 }  
 stages {
     stage('stage 1') {
