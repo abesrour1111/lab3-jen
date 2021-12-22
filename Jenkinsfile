@@ -27,13 +27,14 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
 
     stage('stage 2') {
       steps {
-        sh 'diff /tmp/ids_groupes_prim /tmp/id_groupes > test'
-        sh 'nombre=`wc -l test`'
+        sh ''
+        sh 'nombre=`wc -l /tmp/id_groupes_prim`'
+        sh ' nombre2 = `wc -l /tmp/id_groupes`'
       }
     }
 
   stage ('test') {
-    when {expression { x == 0 }}
+    when {expression { nombre == nombre2 }}
     steps {
 
 echo "les fichiers sont identiques"
