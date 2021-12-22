@@ -27,8 +27,8 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
 
     stage('stage 2') {
       steps {
-        sh 'nombre=`wc -l /tmp/ids_groupes_prim|cut -d' ' -f1`'
-        sh 'nombre2=`wc -l /tmp/id_groupes | cut -d' ' -f1`'
+        nombre= sh '`wc -l /tmp/ids_groupes_prim|cut -d' ' -f1`'
+        nombre2= sh '`wc -l /tmp/id_groupes | cut -d' ' -f1`'
       }
     }
 
