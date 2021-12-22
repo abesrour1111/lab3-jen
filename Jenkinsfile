@@ -33,7 +33,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
     }
 
   stage ('test') {
-    when {expression { x == 0 }
+    when {expression { x == 0 }}
     steps {
 
 echo "les fichiers sont identiques"
