@@ -33,8 +33,8 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
     stage('stage 2') {
       steps {
         echo "ok"
-        params.nombre= $(sh 'wc -l /tmp/ids_groupes_prim|cut -d" " -f1')
-        params.nombre2=$(sh 'wc -l /tmp/id_groupes | cut -d" " -f1')
+        params.nombre= sh 'wc -l /tmp/ids_groupes_prim|cut -d" " -f1'
+        params.nombre2= sh 'wc -l /tmp/id_groupes | cut -d" " -f1'
       }
     }
 
