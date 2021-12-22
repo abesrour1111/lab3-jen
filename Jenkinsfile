@@ -18,7 +18,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
 
         stage('stage 1-3') {
           steps {
-            sh 'cut -d: -f4 /etc/passwd |sort | uniq > /tmp/ids_groupes_prim'
+            sh 'cut -d : -f3 /etc/group >/tmp/id_groupes'
           }
         }
 
@@ -28,7 +28,7 @@ cut -d: -f1,3 /etc/passwd > /tmp/users'''
     stage('stage 2') {
       steps {
         sh ''
-        sh 'nombre=`wc -l /tmp/id_groupes_prim`'
+        sh 'nombre=`wc -l /tmp/ids_groupes_prim`'
         sh ' nombre2 = `wc -l /tmp/id_groupes`'
       }
     }
